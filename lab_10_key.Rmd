@@ -15,7 +15,7 @@ library(janitor)
 library(beepr)
 library(praise)
 library(paletteer)
-#library(sf)
+#library(sf) DOESNT WORK... --> https://r-spatial.github.io/sf/
 library(cowsay)
 ```
 
@@ -54,3 +54,19 @@ usethis::use_git()
 usethis::use_github()
 
 **for me, need to do this: `usethis::use_github(auth_token = "[here's where you put the PAT")`**
+
+
+## paletteer to access thousands of color palettes
+
+```{r}
+storms %>% 
+  group_by(name) %>% 
+  summarize(min_pressure = min(pressure, na.rm = TRUE)) %>% 
+  slice_min(n = 10, min_pressure) %>% 
+  ggplot(aes(x = min_pressure, y = name))+
+  geom_col(aes(fill = name))+
+  scale_fill_paletteer_d("tvthemes::parksAndRec")
+
+```
+
+
