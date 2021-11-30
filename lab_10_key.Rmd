@@ -1,0 +1,53 @@
+---
+title: "lab-10-key"
+author: "Thomas Lenihan"
+date: "11/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(usethis)
+library(janitor)
+
+# install new libraries as well
+library(beepr)
+library(praise)
+library(paletteer)
+#library(sf)
+library(cowsay)
+```
+
+Use the function `beep()` to indicate when a task is done
+
+```{r eval = FALSE}
+
+for (i in rev(seq(1:999))) (
+  print(paste(i, "bottles of beer on the wall"))
+) 
+
+beepr::beep(5)
+
+```
+
+## praise and cowsay
+
+packages built with a single purpose: to be kind and fun.
+
+```{r}
+praise("${Exclamation}, ${EXCLAMATION},...${exclamation}!!!!")
+
+praise("Holy ${exclamation}, Batman - this code is ${ADJECTIVE}")
+```
+
+Use cowsay to make a character say something to you. 
+
+```{r}
+say("it's a series of tubes", by = "rms")
+```
+
+use `usethis::edit_r_profile()` to add processes/messages/time etc on Rstudio startup.
+
+
+
