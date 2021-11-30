@@ -49,5 +49,8 @@ say("it's a series of tubes", by = "rms")
 
 use `usethis::edit_r_profile()` to add processes/messages/time etc on Rstudio startup.
 
+usethis::use_git()
 
+usethis::use_github()
 
+**for me, need to do this: `usethis::use_github(auth_token = "[here's where you put the PAT")`**
